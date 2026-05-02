@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS_assesment_task_3___Ria_C___2026
 {
-    internal class Product
+    public class Product
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }
