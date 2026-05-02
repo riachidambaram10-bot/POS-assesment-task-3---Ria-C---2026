@@ -7,21 +7,15 @@ using System.Threading.Tasks;
 namespace POS_assesment_task_3___Ria_C___2026
 {
     public class Product
+{
+    public string Category { get; set; }
+    public string Size { get; set; }
+    public string Colour { get; set; }
+    public int Stock { get; set; }
+    public double Price { get; set; }
+}
+    public static class TransactionHistory
     {
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public string ProductBrand { get; set; }
-        public decimal ProductPrice { get; set; }
-        public int ProductQuantity { get; set; } 
-
-        public Product(int id, string name, string brand, decimal price, int quantity)
-        {
-            ProductID = id;
-            ProductName = name;
-            ProductBrand = brand;
-            ProductPrice = price;
-            ProductQuantity = quantity;
-        }
-
+              public static List<Product> SavedOrders = new List<Product>();
     }
 }
