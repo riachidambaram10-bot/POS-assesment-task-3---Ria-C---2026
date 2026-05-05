@@ -24,7 +24,7 @@ namespace POS_assesment_task_3___Ria_C___2026
             string inputPass = txtPassword.Text;
 
             // It checks if it ends with my domain AND if the password is correct
-            if (inputUser.EndsWith("admin@trendfitz.com.au") && inputPass == "password123")
+            if (inputUser == ("admin@trendfitz.com.au") && inputPass == "password123")
             {
                 MessageBox.Show("Login Successful! Welcome to TrendFitz!.");
 
