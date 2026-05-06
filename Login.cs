@@ -19,25 +19,40 @@ namespace POS_assesment_task_3___Ria_C___2026
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // Gets the text and makes the username lowercase for easier checking
             string inputUser = txtUsername.Text.ToLower();
             string inputPass = txtPassword.Text;
 
-            // It checks if it ends with my domain AND if the password is correct
-            if (inputUser == ("admin@trendfitz.com.au") && inputPass == "password123")
+            // Search the UserData list for a matching user
+            bool userFound = false;
+            foreach (var user in UserData.AllUsers)
             {
-                MessageBox.Show("Login Successful! Welcome to TrendFitz!.");
+                if (user.Username == inputUser && user.Password == inputPass)
+                {
+                    userFound = true;
+                    break;
+                }
+            }
 
-                Homepage home = new Homepage();
-                home.Show();
+            if (userFound)
+            {
+                MessageBox.Show("Login Successful! Welcome to TrendFitz!");
+                new Homepage().Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Invalid login. username or password incorrect. Pleast try again with a different username or password");
+                MessageBox.Show("Invalid username or password. Please try again.");
                 txtPassword.Clear();
-                txtUsername.Clear();    
             }
+        }
+       
+
+        private void lnkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Opens the Sign Up form
+            SignUP signupForm = new SignUP();
+            signupForm.Show();
+            this.Hide(); // Hide login while signing up
         }
     }
 }

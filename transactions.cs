@@ -40,7 +40,9 @@ namespace POS_assesment_task_3___Ria_C___2026
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Homepage home = new Homepage();
+            home.Show();
+            this.Hide();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

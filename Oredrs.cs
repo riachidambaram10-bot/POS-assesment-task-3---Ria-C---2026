@@ -173,38 +173,54 @@ namespace POS_assesment_task_3___Ria_C___2026
         }
         private void GenerateReceiptPDF(double totalAmount)
         {
-            // Creates a filename with the current date/time so every receipt is unique
-            string fileName = $"TrendFitz_Receipt_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+            // 1. ASK: Do they even want the receipt?
+            DialogResult receiptChoice = MessageBox.Show("Would you like to see your receipt?", "Receipt", MessageBoxButtons.YesNo);
 
-            // This saves it directly to your Desktop
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), fileName);
-
-            // This build the PDF
-            using (PdfWriter writer = new PdfWriter(filePath))
+            if (receiptChoice == DialogResult.Yes)
             {
-                using (PdfDocument pdf = new PdfDocument(writer))
+                string fileName = $"TrendFitz_Receipt_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+                string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), fileName);
+
+                using (PdfWriter writer = new PdfWriter(filePath))
                 {
-                    Document document = new Document(pdf);
-                    document.Add(new Paragraph("TrendFitz - OFFICIAL RECEIPT").SetFontSize(20));
-                    document.Add(new Paragraph($"Date: {DateTime.Now}"));
-                    document.Add(new Paragraph("--------------------------------------------------"));
-
-                    // This adds every item currently in your order listbox to the PDF
-                    foreach (var item in lstCurrentOrder.Items)
+                    using (PdfDocument pdf = new PdfDocument(writer))
                     {
-                        document.Add(new Paragraph(item.ToString()));
+                        Document document = new Document(pdf);
+                        document.Add(new Paragraph("TrendFitz - OFFICIAL RECEIPT").SetFontSize(20));
+                        document.Add(new Paragraph($"Date: {DateTime.Now}"));
+                        document.Add(new Paragraph("--------------------------------------------------"));
+
+                        foreach (var item in lstCurrentOrder.Items)
+                        {
+                            document.Add(new Paragraph(item.ToString()));
+                        }
+
+                        document.Add(new Paragraph("--------------------------------------------------"));
+                        document.Add(new Paragraph($"TOTAL PAID: ${totalAmount:F2}").SetFontSize(16));
+                        document.Add(new Paragraph("\nThank you for shopping at TrendFitz!"));
+                        document.Close();
                     }
-
-                    document.Add(new Paragraph("--------------------------------------------------"));
-                    document.Add(new Paragraph($"TOTAL PAID: ${totalAmount:F2}").SetFontSize(16));
-                    document.Add(new Paragraph("\nThank you for shopping at TrendFitz!"));
-                    document.Close();
-
-                    // auto opens the PDF
-                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(filePath) { UseShellExecute = true });
-
-                    MessageBox.Show($"Receipt PDF generated and saved to your Desktop!");
                 }
+
+                // Auto-opens the PDF
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(filePath) { UseShellExecute = true });
+            }
+
+            // 2. askes the personif they want to stay logged in or Log out?
+            DialogResult stayLoggedIn = MessageBox.Show("Transaction Complete! Do you wish to stay logged in?", "Continue?", MessageBoxButtons.YesNo);
+
+            if (stayLoggedIn == DialogResult.Yes)
+            {
+                // Clear the current order so they can start a new one
+                lstCurrentOrder.Items.Clear();
+                MessageBox.Show("System ready for next customer.");
+            }
+            else
+            {
+                // Take them back to the Login screen
+                Login loginPage = new Login();
+                loginPage.Show();
+                this.Close(); // Closes the transaction page
             }
         }
     }

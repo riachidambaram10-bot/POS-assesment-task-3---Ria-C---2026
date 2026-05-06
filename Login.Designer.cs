@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.lnkSignUp = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +101,7 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Khaki;
             this.btnLogin.Font = new System.Drawing.Font("Mongolian Baiti", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(732, 676);
+            this.btnLogin.Location = new System.Drawing.Point(732, 645);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(195, 62);
             this.btnLogin.TabIndex = 8;
@@ -108,12 +109,25 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // lnkSignUp
+            // 
+            this.lnkSignUp.AutoSize = true;
+            this.lnkSignUp.Location = new System.Drawing.Point(693, 737);
+            this.lnkSignUp.Name = "lnkSignUp";
+            this.lnkSignUp.Size = new System.Drawing.Size(272, 20);
+            this.lnkSignUp.TabIndex = 9;
+            this.lnkSignUp.TabStop = true;
+            this.lnkSignUp.Text = "Dont have an account? Sign up here!";
+            this.lnkSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSignUp_LinkClicked);
+            // 
             // Login
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.ClientSize = new System.Drawing.Size(1576, 769);
+            this.ClientSize = new System.Drawing.Size(1576, 843);
+            this.Controls.Add(this.lnkSignUp);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
@@ -138,5 +152,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.LinkLabel lnkSignUp;
     }
 }
