@@ -98,11 +98,22 @@ namespace POS_assesment_task_3___Ria_C___2026
             {
                 foreach (var item in lstCurrentOrder.Items)
                 {
-                    Product newTransaction = new Product();
-                    newTransaction.Category = item.ToString(); // Grabs the name from your list
-                    newTransaction.Price = subtotal;           // Grabs the price already calculated
+                    string itemText = item.ToString();
 
-                    TransactionHistory.SavedOrders.Add(newTransaction); 
+                    string[] parts = itemText.Split('$');
+
+                    double itemPrice = 0;
+
+                    if (parts.Length > 1)
+                    {
+                        itemPrice = double.Parse(parts[1]);
+                    }
+
+                    Product newTransaction = new Product();
+                    newTransaction.Category = parts[0].Trim();
+                    newTransaction.Price = itemPrice;
+
+                    TransactionHistory.SavedOrders.Add(newTransaction);
                 }
                 MessageBox.Show("Transaction Successful! Thank you for shopping at TrendFitz. Make sure to spred the love and spred the trend ;)");
                 GenerateReceiptPDF(subtotal);
@@ -173,7 +184,7 @@ namespace POS_assesment_task_3___Ria_C___2026
         }
         private void GenerateReceiptPDF(double totalAmount)
         {
-            // 1. ASK: Do they even want the receipt?
+            // asks if they even want the receipt?
             DialogResult receiptChoice = MessageBox.Show("Would you like to see your receipt?", "Receipt", MessageBoxButtons.YesNo);
 
             if (receiptChoice == DialogResult.Yes)
@@ -194,9 +205,11 @@ namespace POS_assesment_task_3___Ria_C___2026
                         {
                             document.Add(new Paragraph(item.ToString()));
                         }
-
+                        double tax = totalAmount * 0.10;
+                        double total = totalAmount + tax;
                         document.Add(new Paragraph("--------------------------------------------------"));
-                        document.Add(new Paragraph($"TOTAL PAID: ${totalAmount:F2}").SetFontSize(16));
+                        document.Add(new Paragraph($"Tax : ${tax:F2}").SetFontSize(13));
+                        document.Add(new Paragraph($"TOTAL PAID: ${total:F2}").SetFontSize(16));
                         document.Add(new Paragraph("\nThank you for shopping at TrendFitz!"));
                         document.Close();
                     }
@@ -206,7 +219,7 @@ namespace POS_assesment_task_3___Ria_C___2026
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(filePath) { UseShellExecute = true });
             }
 
-            // 2. askes the personif they want to stay logged in or Log out?
+            // askes the person if they want to stay logged in or Log out?
             DialogResult stayLoggedIn = MessageBox.Show("Transaction Complete! Do you wish to stay logged in?", "Continue?", MessageBoxButtons.YesNo);
 
             if (stayLoggedIn == DialogResult.Yes)
@@ -217,7 +230,7 @@ namespace POS_assesment_task_3___Ria_C___2026
             }
             else
             {
-                // Take them back to the Login screen
+                // Takes them back to the Login screen
                 Login loginPage = new Login();
                 loginPage.Show();
                 this.Close(); // Closes the transaction page
