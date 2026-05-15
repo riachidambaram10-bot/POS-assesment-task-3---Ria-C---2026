@@ -33,6 +33,7 @@ namespace POS_assesment_task_3___Ria_C___2026
 
             // Saves it to my static list
             UserData.AllUsers.Add(newUser);
+            UserData.SaveUsers();
 
             MessageBox.Show("Account created! You can now log in.");
 

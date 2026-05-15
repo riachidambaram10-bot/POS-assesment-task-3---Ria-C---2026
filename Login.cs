@@ -15,6 +15,8 @@ namespace POS_assesment_task_3___Ria_C___2026
         public Login()
         {
             InitializeComponent();
+
+            UserData.LoadUsers();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -53,6 +55,11 @@ namespace POS_assesment_task_3___Ria_C___2026
             SignUP signupForm = new SignUP();
             signupForm.Show();
             this.Hide(); // Hide login while signing up
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
