@@ -97,6 +97,7 @@
             this.txtPassword.Size = new System.Drawing.Size(453, 26);
             this.txtPassword.TabIndex = 7;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // btnLogin
             // 
@@ -127,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.ClientSize = new System.Drawing.Size(1576, 843);
+            this.ClientSize = new System.Drawing.Size(1524, 843);
             this.Controls.Add(this.lnkSignUp);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);

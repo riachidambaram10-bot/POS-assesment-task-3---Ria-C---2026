@@ -61,5 +61,10 @@ namespace POS_assesment_task_3___Ria_C___2026
         {
 
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
