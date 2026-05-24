@@ -45,14 +45,10 @@ namespace POS_assesment_task_3___Ria_C___2026
             this.Hide(); // Hides the signup page so the app stays open
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtNewUser_Enter(object sender, EventArgs e)
         {
 
         }
     }
 }
+       

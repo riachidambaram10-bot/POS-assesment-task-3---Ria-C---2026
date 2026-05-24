@@ -43,11 +43,11 @@
             this.txtNewUser.Name = "txtNewUser";
             this.txtNewUser.Size = new System.Drawing.Size(242, 26);
             this.txtNewUser.TabIndex = 0;
-            this.txtNewUser.Text = "New user";
+            this.txtNewUser.Text = "New username";
+            this.txtNewUser.Enter += new System.EventHandler(this.txtNewUser_Enter);
             // 
             // txtNewPass
             // 
-            this.txtNewPass.AcceptsReturn = true;
             this.txtNewPass.Location = new System.Drawing.Point(607, 299);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(242, 26);
@@ -64,6 +64,8 @@
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnCreate.MouseEnter += new System.EventHandler(this.txtNewUser_Enter);
+            this.btnCreate.MouseHover += new System.EventHandler(this.txtNewUser_Enter);
             // 
             // pictureBox1
             // 
@@ -74,7 +76,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(392, 297);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBox1
             // 
@@ -85,7 +86,6 @@
             this.textBox1.Size = new System.Drawing.Size(867, 43);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "Want to create a TrendFitz account? sign up and login here!!!";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // SignUP
             // 
