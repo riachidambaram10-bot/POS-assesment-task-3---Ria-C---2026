@@ -23,7 +23,10 @@ namespace POS_assesment_task_3___Ria_C___2026
             new User { Username = "admin@trendfitz.com.au", Password = "password123" }
         };
         // File path
-        static string filePath = "users.txt";
+        static string filePath = Path.Combine(
+    Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+    "users.txt"
+);
 
         // Saves users into the txt file
         public static void SaveUsers()

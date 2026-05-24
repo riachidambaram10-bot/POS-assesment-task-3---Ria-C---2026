@@ -93,6 +93,7 @@
             this.label1.Size = new System.Drawing.Size(454, 46);
             this.label1.TabIndex = 12;
             this.label1.Text = "Create Customer Order";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 

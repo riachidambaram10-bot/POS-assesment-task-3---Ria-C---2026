@@ -76,5 +76,10 @@ namespace POS_assesment_task_3___Ria_C___2026
                 this.Close();
             }
         }
+
+        private void transactions_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

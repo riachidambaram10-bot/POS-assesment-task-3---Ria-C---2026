@@ -66,15 +66,15 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(460, 531);
+            this.label2.Location = new System.Drawing.Point(460, 491);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 25);
+            this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 4;
-            this.label2.Text = "username:";
+            this.label2.Text = "Username:";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(608, 530);
+            this.txtUsername.Location = new System.Drawing.Point(608, 491);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(453, 26);
             this.txtUsername.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(461, 595);
+            this.label3.Location = new System.Drawing.Point(461, 555);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 25);
             this.label3.TabIndex = 6;
@@ -91,7 +91,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(608, 596);
+            this.txtPassword.Location = new System.Drawing.Point(608, 555);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(453, 26);
@@ -103,7 +103,7 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Khaki;
             this.btnLogin.Font = new System.Drawing.Font("Mongolian Baiti", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(732, 645);
+            this.btnLogin.Location = new System.Drawing.Point(732, 605);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(195, 62);
             this.btnLogin.TabIndex = 8;
@@ -114,7 +114,7 @@
             // lnkSignUp
             // 
             this.lnkSignUp.AutoSize = true;
-            this.lnkSignUp.Location = new System.Drawing.Point(693, 737);
+            this.lnkSignUp.Location = new System.Drawing.Point(696, 696);
             this.lnkSignUp.Name = "lnkSignUp";
             this.lnkSignUp.Size = new System.Drawing.Size(272, 20);
             this.lnkSignUp.TabIndex = 9;
@@ -128,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.ClientSize = new System.Drawing.Size(1524, 843);
+            this.ClientSize = new System.Drawing.Size(1524, 1170);
             this.Controls.Add(this.lnkSignUp);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);

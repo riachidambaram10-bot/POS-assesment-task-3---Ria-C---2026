@@ -127,6 +127,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "transactions";
             this.Text = "transactions";
+            this.Load += new System.EventHandler(this.transactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();

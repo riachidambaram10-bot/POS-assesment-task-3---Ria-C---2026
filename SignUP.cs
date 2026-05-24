@@ -33,6 +33,8 @@ namespace POS_assesment_task_3___Ria_C___2026
 
             // Saves it to my static list
             UserData.AllUsers.Add(newUser);
+
+            // Saves all users into users.txt
             UserData.SaveUsers();
 
             MessageBox.Show("Account created! You can now log in.");
@@ -44,6 +46,11 @@ namespace POS_assesment_task_3___Ria_C___2026
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -47,6 +47,7 @@
             // 
             // txtNewPass
             // 
+            this.txtNewPass.AcceptsReturn = true;
             this.txtNewPass.Location = new System.Drawing.Point(607, 299);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(242, 26);
@@ -84,6 +85,7 @@
             this.textBox1.Size = new System.Drawing.Size(867, 43);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "Want to create a TrendFitz account? sign up and login here!!!";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // SignUP
             // 

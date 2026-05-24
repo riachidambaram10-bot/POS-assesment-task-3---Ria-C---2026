@@ -146,5 +146,10 @@ namespace POS_assesment_task_3___Ria_C___2026
                 }
             }
         }
+
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

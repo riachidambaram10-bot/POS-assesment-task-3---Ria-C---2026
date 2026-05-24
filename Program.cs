@@ -16,6 +16,7 @@ namespace POS_assesment_task_3___Ria_C___2026
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            UserData.LoadUsers();
             Application.Run(new Login());
 
         }

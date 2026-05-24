@@ -236,6 +236,11 @@ namespace POS_assesment_task_3___Ria_C___2026
                 this.Close(); // Closes the transaction page
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
